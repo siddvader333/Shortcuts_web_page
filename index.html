@@ -158,7 +158,6 @@ html body {
     margin-top:100px;
   }
 
-
 .distance_demo_btn{
   width: 30px;
   height: 30px;
@@ -186,6 +185,27 @@ html body {
   background-color:#BF1125;
   color: #F1E6E0;
 
+}
+
+.shortcut_btn{
+  height: 35px;
+  width: 100px;
+  border-radius: 15px;
+
+  opacity: 0.85;
+  background-color:#CC1228;
+  color: #F1E6E0;
+}
+.shortcut_btn:active, 
+.shortcut_btn:active:focus,
+.shortcut_btn:hover{
+  height: 35px;
+  width: 100px;
+  border-radius: 15px;
+
+  opacity: 1;
+  background-color:#BF1125;
+  color: #F1E6E0;
 }
   a{text-decoration: none}
 #gif{
@@ -412,49 +432,61 @@ html body {
 
     <!------- Get Directions ------->
     <div class = "containter text-center" data-aos="fade-right" data-aos-delat="75" id = "getDirections">
-        <h1 class = "text">Get <span class ="red_word">Directions</span></h1>
+        <h1 class = "text">Get<span class ="red_word"> Directions</span></h1>
         <br>
-        <h4 class = "text">Our GIS allows you to measure the distance along any path you want.
-          Watch the video below to see how.</h4>
+        <h4 class = "text">See how you can find detailed directions between any points on the map below.</h4>
 
         <!------Table structure:  carousel:  text view:   row of Buttons-->
         <div class = "row">
           <div class = "col-lg-3"></div>
           <div class = "col-lg-6">
-          <div id = "myDirections" class = "carousel carousel2 slide direction_carousel" data-ride = "carousel">
+          <div id = "myDirections" class = "carousel carousel2 direction_carousel" data-ride = "carousel">
               <ol class = "carousel-indicators">
                 <li data-target = "#myDirections" data-slide-to="0" class = "active"></li>
                 <li data-target = "#myDirections" data-slide-to="1"></li>
                 <li data-target = "#myDirections" data-slide-to="2"></li>
+                <li data-target = "#myDirections" data-slide-to="3" ></li>
+                <li data-target = "#myDirections" data-slide-to="4"></li>
+                <li data-target = "#myDirections" data-slide-to="5"></li>
+                <li data-target = "#myDirections" data-slide-to="6"></li>
+                <li data-target = "#myDirections" data-slide-to="7"></li>
+                <li data-target = "#myDirections" data-slide-to="8"></li>
               </ol>
         
               <div class = "carousel-inner" role = "listbox">
                   <div class = "item active">
-                  <img src = "img/snow.png">
+                  <img src = "img/Shortcuts_Screenshot_Dir_OpenMenu.png">
                   </div><!---End active--->
         
                   <div class = "item">
-                    <img src = "img/mountains.png">
+                    <img src = "img/Shortcuts_Screenshot_Dir_SelectDir.png">
                   </div>
                   <div class = "item">
-                      <img src = "img/red.png">
+                      <img src = "img/Shortcuts_Screenshot_Dir_Search.png">
+                  </div>
+                  <div class = "item">
+                      <img src = "img/Shortcuts_Screenshot_Dir_Go.png">
+                  </div>
+                  <div class = "item">
+                      <img src = "img/Shortcuts_Screenshot_Dir_Path.png">
+                  </div>
+                  <div class = "item">
+                      <img src = "img/Shortcuts_Screenshot_Dir_DirList.png">
+                  </div>
+                  <div class = "item">
+                      <img src = "img/Shortcuts_Screenshot_Dir_Exit.png">
+                  </div>
+                  <div class = "item">
+                      <img src = "img/directions_shortcut.gif">
                   </div>
               </div>
               <!---start slider controls-->
-              <a class = "left carousel-control" href = "#myDirections" role = "button" data-slide="prev">
-                <span class = "glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class = "sr-only">Previous</span>
-              </a>
-              <a class = "right carousel-control" href = "#myDirections" role = "button" data-slide="next">
-                  <span class = "glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                  <span class = "sr-only">Next</span>
-                </a>
               </div>
           </div><!---End Slider--->
         </div>
 
         <div class = "row">
-            <h2 id = "getDirectionsText" class = "text">First, open the menu.</h2>
+            <h3 id = "getDirectionsText" class = "text">First, open the menu.</h3>
         </div>
         <div class = "row">
           <button class = "distance_demo_btn" onclick="gotoDirections(0);">1</button>
@@ -464,6 +496,7 @@ html body {
           <button class = "distance_demo_btn" onclick="gotoDirections(4);">5</button>
           <button class = "distance_demo_btn" onclick="gotoDirections(5);">6</button>
           <button class = "distance_demo_btn" onclick="gotoDirections(6);">7</button>
+          <button class = "shortcut_btn" onclick="gotoDirections(7);">Shortcut</button>
         </div>
       </div>
 
@@ -476,7 +509,8 @@ html body {
         <h2 class = "text">Measure <span class ="red_word">Distance</span> Mode</h2>
         <br>
         <br>
-        <p class = "text">Some Generic Text about using the distance mode.</p>
+        <p class = "text">Our GIS allows you to measure the distance along any path you want.
+            Watch the video below to see how.</p>
         <img src = "img/Shortcuts_Measure_Distance.gif" id ="gif">
 
 
@@ -559,8 +593,11 @@ html body {
    if(number === 6 ){
      document.getElementById("getDirectionsText").innerText= "Exit out of the Get Directions Mode by clicking the exit button.";
    }
+   if(number === 7 ){
+     document.getElementById("getDirectionsText").innerText= "Alternatively, you can double click on any two points to find the path between them. Shortcut!";
    
    } 
+   }
     </script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
