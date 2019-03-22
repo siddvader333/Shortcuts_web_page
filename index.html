@@ -13,6 +13,45 @@
   <style>
 
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: #CC1228;
+  color: white;
+  padding: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #FFFF;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #F1E6E0;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #Bf1125;}
+
 html body {
   padding-top: 70px;
   background-image: linear-gradient(to bottom, rgba(255,0,0,0),rgb(221, 221, 221));
@@ -26,6 +65,9 @@ html body {
  background-color:#FFF;
 }
 
+.icon_spacing{
+  margin: 4% auto;
+}
 .profile_image{
   width: 200px;
   height:200px;
@@ -49,6 +91,7 @@ html body {
 
 .text{
   font-family: "Courier New", Courier, monospace;
+  padding: 16px;
 }
 
 .navbar{
@@ -136,6 +179,10 @@ html body {
     width: 200px;
 
   }
+  .main_icon{
+    height: 70px;
+    width: 70px;
+  }
 
   .map_layout_image{
     height: 400px;
@@ -166,13 +213,25 @@ html body {
   line-height: 1.428571429;
   border-radius: 15px;
 
-  background-color:#CC1228;
+  background-color:#C9C0BB;
   opacity: 0.85;
-  color: #F1E6E0;
+  color: #BF1125;
 }
 
 .distance_demo_btn:active, 
-.distance_demo_btn:active:focus,
+.distance_demo_btn:focus{
+  width: 30px;
+  height: 30px;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+
+  opacity: 1;
+  background-color:#BF1125;
+  color: #F1E6E0;
+}
+
 .distance_demo_btn:hover{
   width: 30px;
   height: 30px;
@@ -192,12 +251,21 @@ html body {
   width: 100px;
   border-radius: 15px;
 
+  background-color:#C9C0BB;
   opacity: 0.85;
-  background-color:#CC1228;
-  color: #F1E6E0;
+  color: #BF1125;
 }
 .shortcut_btn:active, 
-.shortcut_btn:active:focus,
+.shortcut_btn:focus{
+  height: 35px;
+  width: 100px;
+  border-radius: 15px;
+
+  opacity: 1;
+  background-color:#BF1125;
+  color: #F1E6E0;
+
+}
 .shortcut_btn:hover{
   height: 35px;
   width: 100px;
@@ -256,9 +324,34 @@ html body {
         </div>
         <div class = "collapse navbar-collapse" id = "myNavbar">
           <ul class = "nav navbar-nav navbar-right">
-            <li><a href = "#" class = "text">Home</a></li>
-            <li><a href = "#map_layout_break" class = "text">Features</a></li>
-            <li><a href = "#About" class = "text">About</a></li>
+            <li>        
+                <div class="dropdown">
+                    <a href = "#body"><button class="dropbtn text">Home</button></a>
+                    <div class="dropdown-content">
+                    </div>
+                  </div>
+               </li>
+
+            <li>
+                <div class="dropdown">
+                    <a href = "#map_layout_break"><button class="dropbtn text">Features</button></a>
+                    <div class="dropdown-content">
+                      <a class = "text "href="#map_layout_break">Map Layout</a>
+                      <a class = "text "href="#searchModes_break">Search Modes</a>
+                      <a class = "text" href="#Themes_break">Theme Selection</a>
+                      <a class = "text" href="#getDirections_break">Get Directions</a>
+                      <a class = "text" href="#measureDistance_break">Measure Distance</a>
+                    </div>
+                  </div>
+            </li>
+
+            <li>
+                <div class="dropdown">
+                    <a href = "#About"><button class="dropbtn text">The Team</button></a>
+                    <div class="dropdown-content">
+                    </div>
+                  </div>
+            </li>
           </ul>
 
         </div>
@@ -299,6 +392,35 @@ html body {
               <img src = "img/red.png">
               <div class = "carousel-caption">
                 <h1 class = "main_slider_text">A Variety of Unique Features</h1>
+                <br>
+                <br>
+                <div class = row>
+
+                  <div class = "col-sm-4">
+                    <img class = "main_icon" src = "img/get_directions_icon.png">
+                  </div>
+                  <div class = "col-sm-4">
+                    <img class = "main_icon" src = "img/search_history_icon.png">
+                  </div>
+                  <div class = "col-sm-4">
+                  <img class = "main_icon" src = "img/measure_distance_icon.png">
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div class = "row">
+                    <div class = "col-sm-3">
+                        </div>
+                    <div class = "col-sm-3">
+                        <img class = "main_icon" src = "img/about_icon.png">
+                        </div>
+                        <div class = "col-sm-3">
+                        <img class = "main_icon" src = "img/settings_icon.png">
+                        </div>
+                        <div class = "col-sm-3">
+                            </div>
+                </div>
+
               </div>
             </div>
       </div>
@@ -327,35 +449,37 @@ html body {
             <img src = "img/Shortcuts_Screenshot_Default_wMenu.png"  id ="map_layout_image">
     </div>
 
-  
-
+    <div id = "searchModes_break"></div>
+    <br>
+    <br>
+    <br>
         <!--------Search Modes ------->
-        <div class = "container text-center" data-aos="fade-right" data-aos-delay="75" id = "SearchModes">
+        <div class = "container text-center" data-aos="fade-right" data-aos-delay="75" id = "searchModes">
             <h2 class = "text"><span class ="red_word">Search</span> Modes</h2>
-            <br>
-            <br>
-            <p class = "text">Using the dropdown menu adjacent to the search bar, you can select between 3 different type of Search Modes.</p>
+            <h4 class = "text">Using the dropdown menu adjacent to the search bar, you can select between 3 different type of Search Modes.</h4>
             <br>
             <div class = "row">
       
-              <div class = "col-sm-4">
+              <div class = "col-md-4">
                   <h4 class = "text">Intersections</h4>
-                  <img src = "img/diglett_gif.gif" id ="icon">
+                  <img class = "search_display" src = "img/shortcut_search_intersection.png" id ="icon">
               </div>
       
-              <div class = "col-sm-4">
+              <div class = "col-md-4">
                   <h4 class = "text">Streets</h4>
-                  <img src = "img/html5.png" id ="icon">
+                  <img class = "search_display" src = "img/shortcuts_search_street.png" id ="icon">
               </div>
       
-              <div class = "col-sm-4">
+              <div class = "col-md-4">
                   <h4 class = "text">Points of Interest</h4>
-                  <img src = "img/html5.png" id ="icon">
+                  <img class = "search_display" src = "img/shortcut_search_poi.png" id ="icon">
               </div>
       
             </div>
       
-            <br>
+          </div>
+
+          <div id = "Themes_break">
             <br>
             <br>
           </div>
@@ -363,14 +487,12 @@ html body {
     <!----Themes Section of the Map--> 
     <div class = "container" data-aos="fade-left" data-aos-delay="75" id = "Themes">
       <h1 class = "text-center text">Variety of <span class ="red_word">Themes</span></h1>
-      <br>
       <div class = "row">
           <!---Themes Description Goes in here-->
-          <br>
-          <p class = "text-center text">We offer a range of different themes you can choose from to customize your map. 
+          <h4 class = "text-center text">We offer a range of different themes you can choose from to customize your map. 
             Just open up the collapsible menu, click on settings, and you will find a drop down containing all the
             themes we have made available for you.
-          </p>
+          </h4>
           <br>
       </div>
       <div class ="row">
@@ -424,23 +546,25 @@ html body {
 
       </div>
 
+    </div>   
+
+    <div id = "getDirections_break"></div>
+    <br>
     <br>
     <br>
     <br>
 
-    </div>   
 
     <!------- Get Directions ------->
     <div class = "containter text-center" data-aos="fade-right" data-aos-delat="75" id = "getDirections">
         <h1 class = "text">Get<span class ="red_word"> Directions</span></h1>
-        <br>
         <h4 class = "text">See how you can find detailed directions between any points on the map below.</h4>
 
         <!------Table structure:  carousel:  text view:   row of Buttons-->
         <div class = "row">
           <div class = "col-lg-3"></div>
           <div class = "col-lg-6">
-          <div id = "myDirections" class = "carousel carousel2 direction_carousel" data-ride = "carousel">
+          <div id = "myDirections" class = "carousel carousel2 direction_carousel" data-interval="false" data-ride = "carousel">
               <ol class = "carousel-indicators">
                 <li data-target = "#myDirections" data-slide-to="0" class = "active"></li>
                 <li data-target = "#myDirections" data-slide-to="1"></li>
@@ -496,21 +620,22 @@ html body {
           <button class = "distance_demo_btn" onclick="gotoDirections(4);">5</button>
           <button class = "distance_demo_btn" onclick="gotoDirections(5);">6</button>
           <button class = "distance_demo_btn" onclick="gotoDirections(6);">7</button>
-          <button class = "shortcut_btn" onclick="gotoDirections(7);">Shortcut</button>
+          <button class = "shortcut_btn" onclick="gotoDirections(7);">Shortcut!</button>
         </div>
       </div>
 
 
     </div>
 
+    <div id = "measureDistance_break"></div>
+    <br>
+    <br>
     <!------- Measure Distance Mode ------->
     <!--------Use a Gif Here to show how--->
     <div class = "container text-center" data-aos="fade-left" data-aos-delay="75" id = "measureDistance">
         <h2 class = "text">Measure <span class ="red_word">Distance</span> Mode</h2>
-        <br>
-        <br>
-        <p class = "text">Our GIS allows you to measure the distance along any path you want.
-            Watch the video below to see how.</p>
+        <h4 class = "text">Our GIS allows you to measure the distance along any path you want.
+            Watch the video below to see how.</h4>
         <img src = "img/Shortcuts_Measure_Distance.gif" id ="gif">
 
 
@@ -518,7 +643,7 @@ html body {
 
     <!-----Who we are Section-->
     <div class = "container text-center" data-aos="fade-right" data-aos-delay="75"id = "About">
-      <h2 class = "text"><span class ="red_word">About</span> Us</h2>
+      <h2 class = "text">The <span class ="red_word">Team</span></h2>
       <br>
       <br>
       <div class = "row">
